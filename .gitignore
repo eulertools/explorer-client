@@ -1,0 +1,24 @@
+# See https://github.com/eulertools/onboarding/ for more information.
+
+# Environment
+.env
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+
+# dependencies
+.pnp
+.pnp.js
+node_modules
+
+# testing
+coverage/
+
+# production
+build/
+
+# Generated
+*.log
+.eslintcache
+.npmrc

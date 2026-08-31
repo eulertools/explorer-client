@@ -1,0 +1,9 @@
+export { default as BlockchainIcon } from './BlockchainIcon';
+export { default as HomeIcon } from './HomeIcon';
+export { default as PairsIcon } from './PairsIcon';
+export { default as PortfoliosIcon } from './PortfoliosIcon';
+export { default as SubscriptionsIcon } from './SubscriptionsIcon';
+export { default as TokensIcon } from './TokensIcon';
+export { default as WorldWideWebIcon } from './WorldWideWebIcon';
+export { default as FarmsIcon } from './FarmsIcon';
+export { default as MigrationIcon } from './MigrationIcon';

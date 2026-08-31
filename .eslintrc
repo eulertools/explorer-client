@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": ["airbnb-typescript", "prettier"],
+  "ignorePatterns": ["**/charting_library/*.js", "**/src/components/beta/tvchart/**/*.js"],
+  "rules": {
+    "@typescript-eslint/comma-dangle": "off",
+    "import/prefer-default-export": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "comma-dangle": "off",
+    "react/forbid-prop-types": "off",
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/require-default-props": "off",
+    "react/destructuring-assignment": "off",
+    "linebreak-style": "off",
+    "no-param-reassign": "off", // slices
+    "no-underscore-dangle": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "react/jsx-no-bind": "off"
+  }
+}

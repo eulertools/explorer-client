@@ -1,0 +1,38 @@
+{
+  "abi": [
+    {
+      "name": "tax",
+      "stateMutability": "view",
+      "type": "function",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "service",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes4",
+          "name": "method",
+          "type": "bytes4"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tax",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_buyback",
+          "type": "bool"
+        }
+      ]
+    }
+  ]
+}

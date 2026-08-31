@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Euler.Tools - Do Crypto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Do Crypto. One click to swap, track and manage crypto." />
+    <meta name="keywords" content="euler, crypto, tools, block, explorer, bsc, binance, bnb, swap, marketplace" />
+    <meta name="author" content="euler.tools" />
+    <meta name="thumbnail" content="https://euler.tools/thumbnail.png" />
+    <!-- Open Graph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Euler.Tools - Do Crypto" />
+    <meta property="og:image" content="https://euler.tools/thumbnail.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:image:alt" content="Euler.tools" />
+    <meta property="og:description" content="Do Crypto. One click to swap, track and manage crypto." />
+    <meta property="og:url" content="https://euler.tools" />
+    <meta property="og:site_name" content="Euler.Tools" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@EulerTools" />
+    <meta name="twitter:creator" content="@EulerTools" />
+    <meta name="twitter:title" content="Euler.Tools - Do Crypto" />
+    <meta name="twitter:description" content="Do Crypto. One click to swap, track and manage crypto." />
+    <meta name="twitter:image" content="https://euler.tools/thumbnail.png" />
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="%PUBLIC_URL%/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="%PUBLIC_URL%/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="%PUBLIC_URL%/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="%PUBLIC_URL%/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="%PUBLIC_URL%/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="%PUBLIC_URL%/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="%PUBLIC_URL%/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/android-icon-192x192.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/ms-icon-144x144.png" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico?v=4" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #loader-wrapper .loader-section {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      #loader-wrapper .loader-section.section-left {
+        left: 0;
+      }
+
+      #loader-wrapper .loader-section.section-right {
+        right: 0;
+      }
+
+      /* Revel screen after page load */
+      .loaded #loader-wrapper {
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        transform: translateY(-100%);
+        -webkit-transition: all 0.3s 1s ease-out;
+        -o-transition: all 0.3s 1s ease-out;
+        -moz-transition: all 0.3s 1s ease-out;
+        transition: all 0.3s 1s ease-out;
+      }
+
+      .loaded #loader-wrapper .loader-section.section-left {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%);
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -o-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -moz-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .loaded #loader-wrapper .loader-section.section-right {
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%);
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -o-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -moz-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .loaded #loader {
+        opacity: 0;
+        -webkit-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+      }
+
+      @keyframes spin2 {
+        0% {
+          opacity: 0.7;
+          transform: rotate(0deg);
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0.7;
+          transform: rotate(360deg);
+        }
+      }
+
+      #loader-logo {
+        /* animation: spin2 5s infinite linear; */
+        /* transform-origin: center center; */
+        display: block;
+      }
+
+      /* SVG loader animation  */
+      svg#loader {
+        display: block;
+        bottom: 0;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        z-index: 999;
+      }
+
+      svg#loader g {
+        -webkit-animation: spin 10s linear infinite;
+        -moz-animation: spin 10s linear infinite;
+        -o-animation: spin 10s linear infinite;
+        animation: spin 10s linear infinite;
+        -webkit-transform-origin: 50% 50%;
+        -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        -o-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+      }
+
+      svg#loader g circle {
+        fill: none;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        color: #eeecf4;
+        stroke-dasharray: 260, 0, 1, 0, 1, 0, 1, 0, 10, 1, 10, 1, 10, 1, 10, 1, 10, 10, 1, 10, 1, 10, 1, 10, 10, 1;
+        -webkit-animation: dostuff 18s ease infinite;
+        -moz-animation: dostuff 18s ease infinite;
+        -o-animation: dostuff 18s ease infinite;
+        animation: dostuff 18s ease infinite;
+      }
+
+      svg#loader g:nth-child(even) {
+        animation-direction: reverse;
+      }
+
+      svg#loader g:nth-child(1n) {
+        -webkit-animation-delay: -1s;
+        -moz-animation-delay: -1s;
+        -o-animation-delay: -1s;
+        animation-delay: -1s;
+      }
+
+      svg#loader g:nth-child(2n) {
+        -webkit-animation-delay: -2s;
+        -moz-animation-delay: -2s;
+        -o-animation-delay: -2s;
+        animation-delay: -2s;
+      }
+
+      svg#loader g:nth-child(3n) {
+        -webkit-animation-delay: -3s;
+        -moz-animation-delay: -3s;
+        -o-animation-delay: -3s;
+        animation-delay: -3s;
+      }
+
+      svg#loader g:nth-child(4n) {
+        -webkit-animation-delay: -4s;
+        -moz-animation-delay: -4s;
+        -o-animation-delay: -4s;
+        animation-delay: -4s;
+      }
+
+      svg#loader g:nth-child(5n) {
+        -webkit-animation-delay: -5s;
+        -moz-animation-delay: -5s;
+        -o-animation-delay: -5s;
+        animation-delay: -5s;
+      }
+
+      svg#loader g:nth-child(6n) {
+        -webkit-animation-delay: -6s;
+        -moz-animation-delay: -6s;
+        -o-animation-delay: -6s;
+        animation-delay: -6s;
+      }
+
+      svg#loader g:nth-child(7n) {
+        -webkit-animation-delay: -7s;
+        -moz-animation-delay: -7s;
+        -o-animation-delay: -7s;
+        animation-delay: -7s;
+      }
+
+      svg#loader g:nth-child(1n) circle {
+        -webkit-animation-delay: -1.5s;
+        -moz-animation-delay: -1.5s;
+        -o-animation-delay: -1.5s;
+        animation-delay: -1.5s;
+      }
+
+      svg#loader g:nth-child(2n) circle {
+        -webkit-animation-delay: -2.5s;
+        -moz-animation-delay: -2.5s;
+        -o-animation-delay: -2.5s;
+        animation-delay: -2.5s;
+      }
+
+      svg#loader g:nth-child(3n) circle {
+        -webkit-animation-delay: -3.5s;
+        -moz-animation-delay: -3.5s;
+        -o-animation-delay: -3.5s;
+        animation-delay: -3.5s;
+      }
+
+      svg#loader g:nth-child(4n) circle,
+      svg#loader g:nth-child(5n) circle {
+        -webkit-animation-delay: -4.5s;
+        -moz-animation-delay: -4.5s;
+        -o-animation-delay: -4.5s;
+        animation-delay: -4.5s;
+      }
+
+      svg#loader g:nth-child(6n) circle {
+        -webkit-animation-delay: -5.5s;
+        -moz-animation-delay: -5.5s;
+        -o-animation-delay: -5.5s;
+        animation-delay: -5.5s;
+      }
+
+      svg#loader g:nth-child(7n) circle {
+        -webkit-animation-delay: -6.5s;
+        -moz-animation-delay: -6.5s;
+        -o-animation-delay: -6.5s;
+        animation-delay: -6.5s;
+      }
+
+      svg#loader g:nth-child(8n) circle {
+        -webkit-animation-delay: -7.5s;
+        -moz-animation-delay: -7.5s;
+        -o-animation-delay: -7.5s;
+        animation-delay: -7.5s;
+      }
+
+      svg#loader g:nth-child(9n) circle {
+        -webkit-animation-delay: -8.5s;
+        -moz-animation-delay: -8.5s;
+        -o-animation-delay: -8.5s;
+        animation-delay: -8.5s;
+      }
+
+      svg#loader g:nth-child(10n) circle {
+        -webkit-animation-delay: -9.5s;
+        -moz-animation-delay: -9.5s;
+        -o-animation-delay: -9.5s;
+        animation-delay: -9.5s;
+      }
+
+      svg#loader g:last-child circle {
+        fill: #cccccc;
+        stroke: none;
+      }
+
+      @-webkit-keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @-moz-keyframes spin {
+        100% {
+          -moz-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @-o-keyframes spin {
+        100% {
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      /* Hide the default chatbot */
+      div#hubspot-messages-iframe-container.widget-align-right {
+        display: none !important;
+      }
+    </style>
+    <script type="text/javascript" src="https://widgets.rubic.exchange/iframe/bundle.min.js"></script>
+    <!-- HubSpot Tracking / Chatbot -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/25656766.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Euler.Tools",
+        "url": "https://euler.tools",
+        "logo": "https://euler.tools/thumbnail.png"
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

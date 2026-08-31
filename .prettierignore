@@ -1,0 +1,12 @@
+# Ignore artifacts:
+build
+coverage
+
+# Lock files
+package-lock.json
+
+# Mocks
+src/__mocks__
+
+# Charting library
+src/charting_library
